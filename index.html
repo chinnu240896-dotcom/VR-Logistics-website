@@ -9,9 +9,9 @@
 
 <style>
 html { scroll-behavior: smooth; }
-body { margin:0; font-family:'Inter', sans-serif; }
+body { margin:0; font-family:'Inter', sans-serif; overflow-x:hidden; }
 
-/* NAV */
+/* HEADER */
 header {
 position:fixed;
 top:0;
@@ -19,10 +19,14 @@ width:100%;
 background:white;
 display:flex;
 justify-content:space-between;
-padding:15px 50px;
+align-items:center;
+padding:10px 30px;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
 z-index:1000;
 }
+
+.logo { height:90px; }
+
 nav a {
 margin-left:20px;
 text-decoration:none;
@@ -33,46 +37,73 @@ font-weight:500;
 /* HERO */
 .hero {
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d') center/cover;
 display:flex;
 align-items:center;
-padding:0 60px;
+padding:0 20px;
 color:white;
+background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d') center/cover;
 }
-.hero h1 { font-size:55px; }
+
+.hero h1 { font-size:50px; max-width:700px; }
+
+/* BUTTON */
 .btn {
 background:#ff6600;
 padding:12px 25px;
 color:white;
 text-decoration:none;
+border-radius:5px;
+display:inline-block;
+margin-top:15px;
 }
 
 /* SECTION */
-.section { padding:80px 60px; text-align:center; }
+.section { padding:80px 20px; text-align:center; }
 h2 { margin-bottom:40px; }
 
-/* CARDS */
-.grid { display:flex; flex-wrap:wrap; justify-content:center; }
+/* GRID */
+.grid {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+/* CARD */
 .card {
-width:300px;
+width:320px;
 margin:15px;
 background:white;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
 border-radius:10px;
 overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 transition:0.3s;
 }
+
 .card:hover { transform:translateY(-10px); }
-.card img { width:100%; height:200px; object-fit:cover; }
+
+.card img {
+width:100%;
+height:200px;
+object-fit:cover;
+transition:0.4s;
+}
+
+.card:hover img { transform:scale(1.1); }
+
 .card-content { padding:20px; }
 
 /* TEXT */
-.long-text { max-width:900px; margin:auto; line-height:1.8; }
+.long-text {
+max-width:900px;
+margin:auto;
+line-height:1.8;
+}
 
 /* STATS */
 .stats {
 display:flex;
+flex-wrap:wrap;
 justify-content:space-around;
 background:#0a1f44;
 color:white;
@@ -85,6 +116,7 @@ input, textarea {
 width:100%;
 padding:12px;
 margin:10px 0;
+border:1px solid #ccc;
 }
 
 /* FOOTER */
@@ -92,6 +124,7 @@ footer {
 background:#111;
 color:#ccc;
 padding:40px;
+text-align:center;
 }
 
 /* WHATSAPP */
@@ -105,13 +138,20 @@ padding:15px;
 border-radius:50%;
 text-decoration:none;
 }
+
+/* MOBILE */
+@media (max-width:768px) {
+.hero h1 { font-size:28px; }
+header { flex-direction:column; }
+nav { margin-top:10px; }
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<img src="logo.png" height="50">
+<img src="logo.png" class="logo">
 <nav>
 <a href="#services">Services</a>
 <a href="#fleet">Fleet</a>
@@ -122,21 +162,28 @@ text-decoration:none;
 
 <section class="hero">
 <div>
-<h1>Reliable Logistics & Import Solutions Across the UK</h1>
-<p>Delivering efficiency, reliability, and excellence across every shipment.</p>
-<a href="#contact" class="btn">Get a Quote</a>
+<h1>End-to-End Logistics & Import Solutions You Can Trust</h1>
+<p>
+VR Logistics and Imports is a UK-based logistics provider delivering reliable, scalable, and efficient transport and import services,
+supporting businesses with seamless supply chain operations across the country and beyond.
+</p>
+<a href="#contact" class="btn">Request a Quote</a>
 </div>
 </section>
 
 <section class="section" id="services">
 <h2>Our Services</h2>
+
 <div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1601582589907-f92af5ed9db8">
+<img src="https://images.unsplash.com/photo-1592833159155-c62df1b65634">
 <div class="card-content">
 <h3>Transport Solutions</h3>
-<p>We provide comprehensive last-mile delivery solutions with optimized routing, ensuring timely and reliable transportation across the UK.</p>
+<p>
+At VR Logistics and Imports, we deliver comprehensive transport solutions designed to support businesses with reliable and efficient movement of goods across the United Kingdom.
+Our operations focus on route optimisation, operational efficiency, and strict adherence to delivery schedules.
+</p>
 </div>
 </div>
 
@@ -144,7 +191,10 @@ text-decoration:none;
 <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec">
 <div class="card-content">
 <h3>Warehousing</h3>
-<p>Our warehousing solutions offer secure storage, inventory control, and seamless distribution to enhance operational efficiency.</p>
+<p>
+We provide secure and strategically managed warehousing solutions, ensuring efficient inventory control and seamless distribution operations
+for businesses seeking reliable storage and logistics support.
+</p>
 </div>
 </div>
 
@@ -152,7 +202,20 @@ text-decoration:none;
 <img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088">
 <div class="card-content">
 <h3>Import Services</h3>
-<p>We manage international shipping and customs clearance with precision, ensuring smooth global trade operations.</p>
+<p>
+Our import services streamline international logistics operations, ensuring efficient customs handling, compliance, and timely delivery
+across global supply chains.
+</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c">
+<div class="card-content">
+<h3>Express Delivery</h3>
+<p>
+We offer same-day and next-day delivery solutions, ensuring urgent consignments are delivered efficiently with high priority and reliability.
+</p>
 </div>
 </div>
 
@@ -160,36 +223,29 @@ text-decoration:none;
 </section>
 
 <section class="section" id="fleet">
-<h2>Our Fleet</h2>
+<h2>Our Fleet & Operations</h2>
+
 <div class="long-text">
 <p>
-Our fleet includes modern 3.5-ton delivery vans and larger transport vehicles, maintained to the highest standards to ensure operational efficiency and reliability. 
-We continuously invest in our fleet to support scalable logistics operations and deliver consistent performance across all service areas.
+Our fleet includes modern 3.5-ton delivery vans and larger vehicles designed to support scalable logistics operations across the UK.
+We maintain high operational standards, ensuring reliability, safety, and efficiency across every delivery.
 </p>
 </div>
 </section>
 
-<section class="section">
-<h2>Why Choose Us</h2>
-<div class="grid">
-<div class="card"><div class="card-content">Fast Delivery</div></div>
-<div class="card"><div class="card-content">Secure Handling</div></div>
-<div class="card"><div class="card-content">24/7 Support</div></div>
-</div>
-</section>
-
 <section class="stats">
-<div>500+ Deliveries</div>
-<div>100+ Clients</div>
+<div>500+ Deliveries Completed</div>
+<div>100+ Clients Served</div>
 <div>24/7 Operations</div>
+<div>Nationwide Coverage</div>
 </section>
 
 <section class="section" id="about">
-<h2>About Us</h2>
+<h2>About VR Logistics and Imports</h2>
 <div class="long-text">
 <p>
-VR Logistics and Imports is a UK-based logistics provider delivering high-quality transport, warehousing, and import solutions. 
-We are committed to operational excellence, customer satisfaction, and continuous innovation.
+VR Logistics and Imports is committed to delivering high-quality logistics services built on trust, reliability, and operational excellence.
+We continuously invest in our people, processes, and technology to support business growth and supply chain efficiency.
 </p>
 </div>
 </section>
@@ -214,7 +270,7 @@ width="100%" height="300"></iframe>
 </section>
 
 <footer>
-<p>© 2026 VR Logistics and Imports</p>
+<p>© 2026 VR Logistics and Imports | All Rights Reserved</p>
 </footer>
 
 <a href="https://wa.me/447588767606" class="whatsapp">💬</a>
