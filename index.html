@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VR Logistics and Imports</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+html { scroll-behavior: smooth; }
+body { margin:0; font-family:'Inter', sans-serif; }
+
+/* NAV */
+header {
+position:fixed;
+top:0;
+width:100%;
+background:white;
+display:flex;
+justify-content:space-between;
+padding:15px 50px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
+}
+nav a {
+margin-left:20px;
+text-decoration:none;
+color:#0a1f44;
+font-weight:500;
+}
+
+/* HERO */
+.hero {
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d') center/cover;
+display:flex;
+align-items:center;
+padding:0 60px;
+color:white;
+}
+.hero h1 { font-size:55px; }
+.btn {
+background:#ff6600;
+padding:12px 25px;
+color:white;
+text-decoration:none;
+}
+
+/* SECTION */
+.section { padding:80px 60px; text-align:center; }
+h2 { margin-bottom:40px; }
+
+/* CARDS */
+.grid { display:flex; flex-wrap:wrap; justify-content:center; }
+.card {
+width:300px;
+margin:15px;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+border-radius:10px;
+overflow:hidden;
+transition:0.3s;
+}
+.card:hover { transform:translateY(-10px); }
+.card img { width:100%; height:200px; object-fit:cover; }
+.card-content { padding:20px; }
+
+/* TEXT */
+.long-text { max-width:900px; margin:auto; line-height:1.8; }
+
+/* STATS */
+.stats {
+display:flex;
+justify-content:space-around;
+background:#0a1f44;
+color:white;
+padding:60px;
+}
+
+/* CONTACT */
+form { max-width:500px; margin:auto; }
+input, textarea {
+width:100%;
+padding:12px;
+margin:10px 0;
+}
+
+/* FOOTER */
+footer {
+background:#111;
+color:#ccc;
+padding:40px;
+}
+
+/* WHATSAPP */
+.whatsapp {
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<img src="logo.png" height="50">
+<nav>
+<a href="#services">Services</a>
+<a href="#fleet">Fleet</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div>
+<h1>Reliable Logistics & Import Solutions Across the UK</h1>
+<p>Delivering efficiency, reliability, and excellence across every shipment.</p>
+<a href="#contact" class="btn">Get a Quote</a>
+</div>
+</section>
+
+<section class="section" id="services">
+<h2>Our Services</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1601582589907-f92af5ed9db8">
+<div class="card-content">
+<h3>Transport Solutions</h3>
+<p>We provide comprehensive last-mile delivery solutions with optimized routing, ensuring timely and reliable transportation across the UK.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec">
+<div class="card-content">
+<h3>Warehousing</h3>
+<p>Our warehousing solutions offer secure storage, inventory control, and seamless distribution to enhance operational efficiency.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088">
+<div class="card-content">
+<h3>Import Services</h3>
+<p>We manage international shipping and customs clearance with precision, ensuring smooth global trade operations.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="fleet">
+<h2>Our Fleet</h2>
+<div class="long-text">
+<p>
+Our fleet includes modern 3.5-ton delivery vans and larger transport vehicles, maintained to the highest standards to ensure operational efficiency and reliability. 
+We continuously invest in our fleet to support scalable logistics operations and deliver consistent performance across all service areas.
+</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Why Choose Us</h2>
+<div class="grid">
+<div class="card"><div class="card-content">Fast Delivery</div></div>
+<div class="card"><div class="card-content">Secure Handling</div></div>
+<div class="card"><div class="card-content">24/7 Support</div></div>
+</div>
+</section>
+
+<section class="stats">
+<div>500+ Deliveries</div>
+<div>100+ Clients</div>
+<div>24/7 Operations</div>
+</section>
+
+<section class="section" id="about">
+<h2>About Us</h2>
+<div class="long-text">
+<p>
+VR Logistics and Imports is a UK-based logistics provider delivering high-quality transport, warehousing, and import solutions. 
+We are committed to operational excellence, customer satisfaction, and continuous innovation.
+</p>
+</div>
+</section>
+
+<section class="section" id="contact">
+<h2>Contact Us</h2>
+
+<p>📞 +44 7588 767606</p>
+<p>📧 info@vrlogisticsgroup.co.uk</p>
+<p>📍 109 Brownhill Rd, London SE6 2HF</p>
+
+<iframe src="https://maps.google.com/maps?q=109 Brownhill Rd, London SE6 2HF&output=embed"
+width="100%" height="300"></iframe>
+
+<form action="https://formsubmit.co/info@vrlogisticsgroup.co.uk" method="POST">
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message"></textarea>
+<button class="btn">Send</button>
+</form>
+
+</section>
+
+<footer>
+<p>© 2026 VR Logistics and Imports</p>
+</footer>
+
+<a href="https://wa.me/447588767606" class="whatsapp">💬</a>
+
+</body>
+</html>
